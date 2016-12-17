@@ -1,0 +1,180 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Home | HotelNewYork
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/font-awesome.min.css', rel='stylesheet')
+    link(href='css/animate.min.css', rel='stylesheet')
+    link(href='css/lightbox.css', rel='stylesheet')
+    link(href='css/main.css', rel='stylesheet')
+    link(href='css/responsive.css', rel='stylesheet')
+    //if lt IE 9
+      script(src='js/html5shiv.js')
+      script(src='js/respond.min.js')
+    link(rel='shortcut icon', href='images/ico/apple-touch-icon-89-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='225x225', href='images/ico/apple-touch-icon-225-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='179x178', href='images/ico/apple-touch-icon-179-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='113x113', href='images/ico/apple-touch-icon-113-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='images/ico/apple-touch-icon-89-precomposed.png')
+  // /head
+  body
+    header#header
+
+      .containerCopyright
+        .row
+          .col-sm-12.overflow
+            .social-icons.pull-right(style='margin-right:10%')
+              ul.nav.nav-pills
+                li
+                  p
+                    |Sign In ->
+                li
+                  a(href='/create_account')
+                    i.fa.fa-linkedin
+      .navbar.navbar-inverse(role='banner')
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/')
+              h1
+                img(src='images/logo.png', alt='logo',style='width:258px;height:80px')
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li.active
+                a(href='/') Home
+              li.dropdown
+                a(href='#')
+                  | Info
+                  i.fa.fa-angle-down
+                ul.sub-menu(role='menu')
+                  li
+                    a(href='/showroom') Rooms
+                  li
+                    a(href='service.html') Services
+                  li
+                    a(href='pricing.html') 404 Not found
+                  li
+                    a(href='contact.html') 404 Not found
+                  li
+                    a(href='coming-soon.html') Coming Soon
+
+              if grade > 1
+                li.dropdown
+                    a(href='#')
+                      | Companys
+                      i.fa.fa-angle-down
+                    ul.sub-menu(role='menu')
+                      li
+                        a(href='/addcompany') Add Company
+                      li
+                        a(href='/deletecompany') Delete Company
+                      li
+                        a(href='/updatecompany') Update Company
+                      li
+                        a(href='/showcompany') Show Company list
+                li.dropdown
+                  a(href='#')
+                    | Stuffs
+                    i.fa.fa-angle-down
+                  ul.sub-menu(role='menu')
+                    li
+                      a(href='/addstuff') Add Stuff
+                    li
+                      a(href='/deletestuff') Delete Stuff
+                    li
+                      a(href='/updatestuff') Update Stuff
+                    li
+                      a(href='/showstuff') Show Stuff list
+                li.dropdown
+                  a(href='#')
+                    | Rooms
+                    i.fa.fa-angle-down
+                  ul.sub-menu(role='menu')
+                    li
+                      a(href='/addroom') Add Room
+                    li
+                      a(href='/deleteroom') Delete Room
+                    li
+                      a(href='/updateroom') Update Room
+                    li
+                      a(href='/showroomlist') Show Room List
+                    li
+                      a(href='/showreservation') Reservation Manage
+
+              if grade > 2
+                li.dropdown
+                    a(href='#')
+                      | ADMIN_MENU
+                      i.fa.fa-angle-down
+                    ul.sub-menu(role='menu')
+                      li
+                        a(href='/addemployee') Add Employee
+                      li
+                        a(href='/deleteemployee') Delete Employee
+                      li
+                        a(href='/updateemployee') Update Employee
+                      li
+                        a(href='/showemployee') Show Employee List
+              if grade == 0
+                li.dropdown
+                    a(href='#')
+                      | My Menu
+                      i.fa.fa-angle-down
+                    ul.sub-menu(role='menu')
+                      li
+                        a(href='/showreservation2') My Reservation
+                      li
+                        a(href='portfoliofour.html') 404 Not found
+                      li
+                        a(href='portfolioone.html') 404 Not found
+                      li
+                        a(href='portfoliotwo.html') 404 Not found
+                      li
+                        a(href='portfoliothree.html') 404 Not found
+                      li
+                        a(href='portfolio-details.html') 404 Not found
+          .search
+            form(role='form')
+              i.fa.fa-search
+              .field-toggle
+                input.search-form(type='text', autocomplete='off', placeholder='Search')
+    section#company-information.choose
+      .container
+        .row
+          .col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='0ms')
+            img.img-responsive(src='http://orig07.deviantart.net/7f3b/f/2012/228/e/c/the_hotel_network_logo_design_2_by_icondesigns-d5bardw.jpg', alt='')
+          .col-sm-6.padding-top.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='0ms')
+
+            table.table
+              thead
+                tr
+                  th #
+                  th CODE
+                  th NAME
+                  th COMPANY
+                  th COUNT
+                  th PRICE
+              tbody
+                -var ob = JSON.parse(data)
+                -for(var prop in ob)
+                  tr
+                    th(scope='row') #{prop}
+                    td #{ob[prop].CODE}
+                    td #{ob[prop].NAME}
+                    td #{ob[prop].COMPANY}
+                    td #{ob[prop].COUNT}
+                    td $#{ob[prop].PRICE}
+
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/bootstrap.min.js')
+    script(type='text/javascript', src='js/lightbox.min.js')
+    script(type='text/javascript', src='js/wow.min.js')
+    script(type='text/javascript', src='js/main.js')

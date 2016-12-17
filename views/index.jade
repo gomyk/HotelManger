@@ -1,0 +1,350 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Home | HotelNewYork
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/font-awesome.min.css', rel='stylesheet')
+    link(href='css/animate.min.css', rel='stylesheet')
+    link(href='css/lightbox.css', rel='stylesheet')
+    link(href='css/main.css', rel='stylesheet')
+    link(href='css/responsive.css', rel='stylesheet')
+    //if lt IE 9
+      script(src='js/html5shiv.js')
+      script(src='js/respond.min.js')
+    link(rel='shortcut icon', href='images/ico/apple-touch-icon-89-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='225x225', href='images/ico/apple-touch-icon-225-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='179x178', href='images/ico/apple-touch-icon-179-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='113x113', href='images/ico/apple-touch-icon-113-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='images/ico/apple-touch-icon-89-precomposed.png')
+  // /head
+  body
+    header#header
+
+      .containerCopyright
+        .row
+          .col-sm-12.overflow
+            .social-icons.pull-right(style='margin-right:10%')
+              ul.nav.nav-pills
+                li
+                  p
+                    |Sign In ->
+                li
+                  a(href='/create_account')
+                    i.fa.fa-linkedin
+      .navbar.navbar-inverse(role='banner')
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/')
+              h1
+                img(src='images/logo.png', alt='logo',style='width:258px;height:80px')
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li.active
+                a(href='/') Home
+              li.dropdown
+                a(href='#')
+                  | Info
+                  i.fa.fa-angle-down
+                ul.sub-menu(role='menu')
+                  li
+                    a(href='/showroom') Rooms
+                  li
+                    a(href='service.html') Services
+                  li
+                    a(href='pricing.html') 404 Not found
+                  li
+                    a(href='contact.html') 404 Not found
+                  li
+                    a(href='coming-soon.html') Coming Soon
+
+              if grade > 1
+                li.dropdown
+                    a(href='#')
+                      | Companys
+                      i.fa.fa-angle-down
+                    ul.sub-menu(role='menu')
+                      li
+                        a(href='/addcompany') Add Company
+                      li
+                        a(href='/deletecompany') Delete Company
+                      li
+                        a(href='/updatecompany') Update Company
+                      li
+                        a(href='/showcompany') Show Company list
+                li.dropdown
+                  a(href='#')
+                    | Stuffs
+                    i.fa.fa-angle-down
+                  ul.sub-menu(role='menu')
+                    li
+                      a(href='/addstuff') Add Stuff
+                    li
+                      a(href='/deletestuff') Delete Stuff
+                    li
+                      a(href='/updatestuff') Update Stuff
+                    li
+                      a(href='/showstuff') Show Stuff list
+                li.dropdown
+                  a(href='#')
+                    | Rooms
+                    i.fa.fa-angle-down
+                  ul.sub-menu(role='menu')
+                    li
+                      a(href='/addroom') Add Room
+                    li
+                      a(href='/deleteroom') Delete Room
+                    li
+                      a(href='/updateroom') Update Room
+                    li
+                      a(href='/showroomlist') Show Room List
+                    li
+                      a(href='/showreservation') Reservation Manage
+
+              if grade > 2
+                li.dropdown
+                    a(href='#')
+                      | ADMIN_MENU
+                      i.fa.fa-angle-down
+                    ul.sub-menu(role='menu')
+                      li
+                        a(href='/addemployee') Add Employee
+                      li
+                        a(href='/deleteemployee') Delete Employee
+                      li
+                        a(href='/updateemployee') Update Employee
+                      li
+                        a(href='/showemployee') Show Employee List
+                      li
+                        a(href='/showsalelist') Show Sale List
+              if grade == 0
+                li.dropdown
+                    a(href='#')
+                      | My Menu
+                      i.fa.fa-angle-down
+                    ul.sub-menu(role='menu')
+                      li
+                        a(href='/showreservation2') My Reservation
+                      li
+                        a(href='portfoliofour.html') 404 Not found
+                      li
+                        a(href='portfolioone.html') 404 Not found
+                      li
+                        a(href='portfoliotwo.html') 404 Not found
+                      li
+                        a(href='portfoliothree.html') 404 Not found
+                      li
+                        a(href='portfolio-details.html') 404 Not found
+          .search
+            form(role='form')
+              i.fa.fa-search
+              .field-toggle
+                input.search-form(type='text', autocomplete='off', placeholder='Search')
+    // /#header
+    section#home-slider
+      .container
+        .row
+          .main-slider
+            .slide-text
+              if login
+                h1 Hello! #{username}!! Welcome!
+              else if !login
+                h1 We Are team ProjectD
+              if login
+                a.btn.btn-common(href='/logout') logout
+              else if !login
+                a.btn.btn-common(href='/login') login
+
+
+
+
+
+            img.slider-house(src='images/home/slider/hotel.png', alt='slider image')
+
+      .preloader
+        i.fa.fa-sun-o.fa-spin
+    // /#home-slider
+    section#services
+
+      .container
+        .row
+          .text-center
+            h2 &nbsp
+          .text-center
+            h2 News and Notice
+          .col-sm-4.text-center.padding.wow.fadeIn(data-wow-duration='1000ms', data-wow-delay='300ms')
+            .single-service
+              .wow.scaleIn(data-wow-duration='500ms', data-wow-delay='300ms')
+                img(src='https://kvcollins.files.wordpress.com/2011/02/poster-horizontal.jpg', alt='',style='width:200px;height:140px')
+              h2 Pictorial Modernism
+              p
+                | A history of graphic design national lecture series.
+              p
+                | Session 1:&nbspPictorial Modernism &nbsp- &nbspIconic, &nbspBold, &nbspClear advertisement.
+          .col-sm-4.text-center.padding.wow.fadeIn(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .single-service
+              .wow.scaleIn(data-wow-duration='500ms', data-wow-delay='600ms')
+                img(src='http://s3images.coroflot.com/user_files/individual_files/298236_RoPuEhAdDSyGZsXKHIubbHPri.jpg', alt='',style='width:200px;height:140px')
+              h2 Superior Typography
+              p
+                | Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
+          .col-sm-4.text-center.padding.wow.fadeIn(data-wow-duration='1000ms', data-wow-delay='900ms')
+            .single-service
+              .wow.scaleIn(data-wow-duration='500ms', data-wow-delay='900ms')
+                img(src='http://www.designyep.com/wp-content/uploads/2016/08/Glass-Frame-Horizontal-Poster-Mockup.jpg', alt='',style='width:200px;height:140px')
+              h2 Swift Page Builder
+              p
+                | Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
+    // /#services
+    section#action.responsive
+      .vertical-center
+        .container
+          .row
+            .action.take-tour
+              .col-sm-7.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='300ms')
+                h1.title Hotel New York Prive Best Services!
+                p Relax and Comfortable,&nbspGreat views with coast
+              .col-sm-5.text-center.wow.fadeInRight(data-wow-duration='500ms', data-wow-delay='300ms')
+                .tour-button
+                  a.btn.btn-common(href='/reservation') Go To Reservation
+    // /#action
+    section#features
+      .container
+        .row
+          .single-features
+            .col-sm-5.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='300ms')
+                a(href='/reservation')
+                    img.img-responsive(src='http://hotelthedesigners.com/wp-content/uploads/2014/03/sli06.jpg', alt='',style='width:400px;height:184px' )
+            .col-sm-6.wow.fadeInRight(data-wow-duration='500ms', data-wow-delay='300ms')
+              h2 Premium Rooms
+              p
+                | 301 , 302 , 303 Rooms are Premium Rooms for VIPS and also provide extra services. &nbspIt offers excellent views and special benefits. &nbspAdditional services are available and discounts are currently underway.
+          .single-features
+            .col-sm-6.col-sm-offset-1.align-right.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='300ms')
+              h2 Deluxe Rooms
+              p
+                | 201 , 202 , 203 Rooms are Deluxe Rooms for Besiness Man and also provide extra services. &nbspIt offers excellent views and special benefits. &nbspAdditional services are available and discounts are currently underway.&nbspA special event will be held on the upcoming anniversary.
+
+            .col-sm-5.wow.fadeInRight(data-wow-duration='500ms', data-wow-delay='300ms')
+              a(href='/reservation')
+                img.img-responsive(src='http://hotelthedesigners.com/wp-content/uploads/2014/03/mainslider5.jpg', alt='',style='width:400px;height:184px',href='/reservation')
+          .single-features
+            .col-sm-5.wow.fadeInLeft(data-wow-duration='500ms', data-wow-delay='300ms')
+              a(href='/reservation')
+                img.img-responsive(src='http://hotelthedesigners.com/wp-content/uploads/2014/03/sli03.jpg', alt='',style='width:400px;height:184px',href='/reservation')
+            .col-sm-6.wow.fadeInRight(data-wow-duration='500ms', data-wow-delay='300ms')
+              h2 Standard Rooms
+              p
+                | 101 , 102 , 103 Rooms are Standard Rooms. &nbspIt provide basic services.&nbspBut it is very good quality for low price.&nbspIt is very popular and you need to reserve in advance.
+
+    // /#features
+    section#clients
+      .container
+        .row
+          .col-sm-12
+            .clients.text-center.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='300ms')
+              p
+                img.img-responsive(src='https://cdn4.iconfinder.com/data/icons/web-pages-seo/512/59-512.png', alt='',style='width:400px;height:400px')
+              h1.title Implement as WebServer
+              p
+                |Node.js | HTML5 | Bootstrap | Sqlite3 | ExpressEngine | JQuery
+                br
+                |Implement with OOP structure
+            .clients-logo.wow.fadeIn(data-wow-duration='1000ms', data-wow-delay='600ms')
+              .col-xs-3.col-sm-2
+                a(href='#')
+                  img.img-responsive(src='https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436439824nodejs-logo.png', alt='',style='width:130px;height:50px')
+              .col-xs-3.col-sm-2
+                a(href='#')
+                  img.img-responsive(src='https://js.devexpress.com/Content/Images/features/html5-css-javascript-logos.png', alt='',style='width:130px;height:50px')
+              .col-xs-3.col-sm-2
+                a(href='#')
+                  img.img-responsive(src='http://www.continued-learning.com/img/logos/bootstrap.png', alt='',style='width:130px;height:50px')
+              .col-xs-3.col-sm-2
+                a(href='#')
+                  img.img-responsive(src='https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/03/1425667074SQLite370.svg-Custom.png', alt='',style='width:130px;height:50px')
+              .col-xs-3.col-sm-2
+                a(href='#')
+                  img.img-responsive(src='http://www.galirede.es/themes/site_themes/agile_records/images/uploads/ExpressionEngine_logo.png', alt='',style='width:130px;height:50px')
+              .col-xs-3.col-sm-2
+                a(href='#')
+                  img.img-responsive(src='http://www.bigboxx.in/wp-content/uploads/2014/07/JQuery_logo.png', alt='',style='width:130px;height:50px')
+    // /#clients
+    footer#footer
+      .container
+        .row
+          .col-sm-12.text-center.bottom-separator
+            img.img-responsive.inline(src='images/home/under.png', alt='')
+          .col-md-4.col-sm-6
+            .testimonial.bottom
+              h2 Programmers
+              .media
+                .pull-left
+                  a(href='#')
+                    img(src='https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/13173675_1094926517236479_8987070999890513517_n.jpg?oh=7163a757f6a4b6ab5836f7fa249c3dff&oe=58BA924E', alt='',style='width:81px;height:81px')
+                .media-body
+                  blockquote 김문원입니다
+                  h3
+                    a(href='#') - Moonwon
+              .media
+                .pull-left
+                  a(href='#')
+                    img(src='images/room/ki.jpg', alt='',style='width:81px;height:81px')
+                .media-body
+                  blockquote
+                    | 유기현입니다.
+                  h3
+                    a(href='') - Kihyun
+          .col-md-3.col-sm-6
+            .contact-info.bottom
+              h2 Contacts
+              address
+                | E-mail:
+                a(href='mailto:gomyk@naver.com') gomyk@naver.com
+                br
+                |                         Phone: 010 5176 0970
+                br
+                |                         Fax: 031) 456 7891
+                br
+              h2 Address
+              address
+                | GyoengGiDo YongIn
+                br
+                |                         KyoungHeeUniv,
+                br
+                |                         ComputerEngineeringDept
+                br
+                |                         Network Enhanced Technology
+                br
+          .col-md-4.col-sm-12
+            .contact-form.bottom
+              h2 Send a message
+              form#main-contact-form(name='contact-form', method='post', action='sendemail.php')
+                .form-group
+                  input.form-control(type='text', name='name', required='required', placeholder='Name')
+                .form-group
+                  input.form-control(type='email', name='email', required='required', placeholder='Email Id')
+                .form-group
+                  textarea#message.form-control(name='message', required='required', rows='8', placeholder='Your text here')
+                .form-group
+                  input.btn.btn-submit(type='submit', name='submit', value='Submit')
+          .col-sm-12
+            .copyright-text.text-center
+              p © ProjectD 2016. All Rights Reserved.
+              p
+                | Designed by
+                a(target='_blank', href='#') Moonwon and Kihyun
+    // /#footer
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/bootstrap.min.js')
+    script(type='text/javascript', src='js/lightbox.min.js')
+    script(type='text/javascript', src='js/wow.min.js')
+    script(type='text/javascript', src='js/main.js')
